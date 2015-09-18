@@ -19,36 +19,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <!-- 1. Include Firebase JS Client -->
-    <!--
-    <script src="..."></script>
-    -->
+    <script src=""></script>
 
   </head>
   <body>
     <div id='messagesDiv'>
       <!-- Where the messages will go -->
     </div>
-    <input type='text' id='nameInput' placeholder='Name'>
-    <input type='text' id='messageInput' placeholder='Message'>
+    <input type="text" id="nameInput" placeholder="Name">
+    <input type="text" id="messageInput" placeholder="Message" />
+    <input type="button" id="sendButton" value="Send" />
 
     <script>
       $(document).ready(function() {
-        <!-- 2. Create a Firebase reference -->
+        // 2. Create a Firebase reference.
         //var myDataRef = new Firebase('https://YOUR_FIREBASE.firebaseio.com/');
 
-        $('#messageInput').keypress(function (e) {
-          if (e.keyCode == 13) {
-            var name = $('#nameInput').val();
-            var text = $('#messageInput').val();
+        $('#sendButton').click(function (e) {
+          var textboxName = $('#nameInput').val();
+          var textboxMessage = $('#messageInput').val();
 
-            <!-- 3. Push a message when "Send" is clicked -->
-            // myDataRef.push(...)
+          // 3. Push a message when "Send" is clicked.
+          //myDataRef.set({
+          //
+          //});
 
-            $('#messageInput').val('');
-          }
+          // Clear the message text box.
+          $('#messageInput').val('');
         });
 
-        <!-- 4. Listen to the child_added event, and display the message -->
+        // 4. Listen to the child_added event, and display the message.
         // myDataRef.on(...)
 
         function displayChatMessage(name, text) {
